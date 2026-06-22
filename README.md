@@ -12,60 +12,64 @@ It was designed as a practical automation project for managing Binance Futures p
 
 ## Features
 
-- Binance Futures integration
-- Config-driven execution logic
-- Multi-symbol support
-- Hedge mode support
-- Cross/isolated margin configuration
-- Position scaling logic
-- Persistent local state tracking
-- Take-profit management
-- Entry and scaling cooldowns
-- Exchange rule handling for quantity precision
-- Optional Telegram notifications
-- Logging to console and file
+* Binance Futures integration
+* Config-driven execution logic
+* Multi-symbol support
+* Hedge mode support
+* Cross/isolated margin configuration
+* Position scaling logic
+* Persistent local state tracking
+* Take-profit management
+* Entry and scaling cooldowns
+* Exchange rule handling for quantity precision
+* Optional Telegram notifications
+* Logging to console and file
 
-## Project Structure
+## Project Files
 
-```text
-.
-├── trader.py
-├── config.example.json
-├── requirements.txt
-├── .gitignore
-└── README.md
-Setup
+* `trader.py` - main trading engine
+* `config.example.json` - safe example configuration
+* `requirements.txt` - Python dependencies
+* `.gitignore` - ignored local/private files
+* `README.md` - project documentation
+
+## Setup
 
 Install dependencies:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-Create your private config file:
+Create your private config file by copying the example file:
 
-cp config.example.json config.json
+`config.example.json` → `config.json`
 
-Edit config.json and add your own Binance API credentials.
+Edit `config.json` and add your own Binance API credentials.
 
 Run the engine:
 
-python trader.py
-Configuration
+`python trader.py`
 
-The engine is controlled through config.json.
+## Configuration
 
-The repository includes config.example.json as a safe template. Real API keys, Telegram tokens, logs, state files, and local configuration files should not be committed to the repository.
+The engine is controlled through `config.json`.
 
-Security Notes
+The repository includes `config.example.json` as a safe public template. Real API keys, Telegram tokens, logs, state files, and local configuration files should not be committed to the repository.
+
+## Security Notes
 
 Never commit:
 
-config.json
-API keys
-Telegram bot tokens
-log files
-state files
-exchange account data
+* `config.json`
+* API keys
+* Telegram bot tokens
+* log files
+* state files
+* exchange account data
 
-Use config.example.json only as a public template.
+Use `config.example.json` only as a public template.
 
-Disclaimer: This project is for educational and portfolio purposes. It is not financial advice. Automated trading involves risk, including the risk of financial loss. Use at your own responsibility.
+## Disclaimer
+
+This project is for educational and portfolio purposes.
+
+It is not financial advice. Automated trading involves risk, including the risk of financial loss. Use at your own responsibility.
