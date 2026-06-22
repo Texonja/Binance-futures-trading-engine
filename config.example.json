@@ -1,0 +1,89 @@
+{
+    "key": {
+        "private": "YOUR_BINANCE_API_SECRET",
+        "public": "YOUR_BINANCE_API_KEY"
+    },
+    "price": {
+        "lookback": 10
+    },
+    "capital": {
+        "compound": false,
+        "compoundRate": 4,
+        "drop": [
+            2,
+            5,
+            10,
+            25
+        ],
+        "factor": 2,
+        "min": 50,
+        "profit": [
+            1,
+            1,
+            1,
+            2,
+            3
+        ],
+        "risk": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "trailing": false,
+        "trailingStart": 1,
+        "trailingStep": 1
+    },
+    "order": {
+        "liquidationCooldown": 60,
+        "entryCooldown": 1,
+        "open": {
+            "commission": 0.0,
+            "limit": false,
+            "market": true,
+            "slippage": 0.2,
+            "timeFloat": 180,
+            "cooldown": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "crashEntry": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "close": {
+            "commission": 0.0,
+            "limit": false,
+            "market": true,
+            "slippage": 0.2,
+            "cooldown": 1
+        }
+    },
+    "position": {
+        "hedge": true,
+        "leverage": 1,
+        "side": "LONG",
+        "type": "CROSS"
+    },
+    "symbol": [
+        "RVNUSDT"
+    ],
+    "extra": {
+        "actionDelay": 0.1,
+        "closeOnly": false,
+        "telegram": false,
+        "telegramChat": "YOUR_TELEGRAM_CHAT_ID",
+        "telegramToken": "YOUR_TELEGRAM_BOT_TOKEN"
+    }
+}
