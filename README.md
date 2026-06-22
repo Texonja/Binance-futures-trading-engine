@@ -34,3 +34,38 @@ It was designed as a practical automation project for managing Binance Futures p
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+Setup
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Create your private config file:
+
+cp config.example.json config.json
+
+Edit config.json and add your own Binance API credentials.
+
+Run the engine:
+
+python trader.py
+Configuration
+
+The engine is controlled through config.json.
+
+The repository includes config.example.json as a safe template. Real API keys, Telegram tokens, logs, state files, and local configuration files should not be committed to the repository.
+
+Security Notes
+
+Never commit:
+
+config.json
+API keys
+Telegram bot tokens
+log files
+state files
+exchange account data
+
+Use config.example.json only as a public template.
+
+Disclaimer: This project is for educational and portfolio purposes. It is not financial advice. Automated trading involves risk, including the risk of financial loss. Use at your own responsibility.
