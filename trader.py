@@ -14,7 +14,7 @@ from binance.client import Client
 from binance.exceptions import BinanceAPIException
 
 # ======================================================================================
-# PUTANJE I LOGOVANJE - Bot2027 v2
+# PUTANJE I LOGOVANJE - Bot2027 v4
 # ======================================================================================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_FILE = os.path.join(BASE_DIR, "config.json")
@@ -71,7 +71,7 @@ class StateLoadError(RuntimeError):
 
 
 class SingleInstanceLock:
-    """OS-level lock: sprecava da dve instance Bot2027 v2 rade istovremeno."""
+    """OS-level lock: sprecava da dve instance Bot2027 v4 rade istovremeno."""
 
     def __init__(self, path):
         self.path = path
@@ -424,9 +424,9 @@ class MultiCoinBot:
     # -----------------------------------------------
 
     def setup(self):
-        """Inicijalizacija Bot2027 v2 + verifikacija leverage/margin/position mode stanja."""
+        """Inicijalizacija Bot2027 v4 + verifikacija leverage/margin/position mode stanja."""
         start_msg = (
-            f"🚀 <b>Bot2027 v2 STARTED</b>\n"
+            f"🚀 <b>Bot2027 v4 STARTED</b>\n"
             f"Simboli: {self.cfg.symbols}\n"
             f"Leverage: x{self.cfg.leverage} | Margin: {self.cfg.margin_type}\n"
             f"120d alert: {self.cfg.position_age_alert_days:g}d | Sleep: {self.cfg.symbol_sleep_sec:g}s"
@@ -1465,10 +1465,10 @@ class MultiCoinBot:
 
     def run(self):
         if not self.setup():
-            logger.error("CRITICAL: setup nije uspeo. Bot2027 v2 se ne pokrece.")
+            logger.error("CRITICAL: setup nije uspeo. Bot2027 v4 se ne pokrece.")
             return
 
-        logger.info("🤖 Bot2027 v2 Multi-Coin Bot je aktivan.")
+        logger.info("🤖 Bot2027 v4 Multi-Coin Bot je aktivan.")
         last_h, last_r = 0, 0
         while True:
             for s in self.cfg.symbols:
@@ -1677,7 +1677,7 @@ def main():
     instance_lock = SingleInstanceLock(INSTANCE_LOCK_FILE)
     if not instance_lock.acquire():
         logger.error(
-            f"CRITICAL: Bot2027 v2 vec radi ili lock nije dostupan: {INSTANCE_LOCK_FILE}. "
+            f"CRITICAL: Bot2027 v4 vec radi ili lock nije dostupan: {INSTANCE_LOCK_FILE}. "
             f"Druga instanca se gasi bez Binance poziva."
         )
         return 2
@@ -1687,13 +1687,13 @@ def main():
         bot.run()
         return 0
     except StateLoadError as e:
-        logger.error(f"CRITICAL: {e}. Bot2027 v2 se ne pokrece.")
+        logger.error(f"CRITICAL: {e}. Bot2027 v4 se ne pokrece.")
         return 3
     except KeyboardInterrupt:
-        logger.info("Bot2027 v2 zaustavljen od strane korisnika.")
+        logger.info("Bot2027 v4 zaustavljen od strane korisnika.")
         return 0
     except Exception as e:
-        logger.exception(f"CRITICAL UNHANDLED BOT2027 V2 ERROR: {e}")
+        logger.exception(f"CRITICAL UNHANDLED BOT2027 V4 ERROR: {e}")
         return 1
     finally:
         instance_lock.release()

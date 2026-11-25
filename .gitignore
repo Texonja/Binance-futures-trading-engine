@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local trading configuration and runtime files
+/config.json
+/bot_state.json
+/bot_log.txt
+/bot_audit.jsonl
+/bot2027.lock
