@@ -55,6 +55,8 @@ The engine is controlled through `config.json`.
 
 Set `price.lookback` to the number of completed one-minute candles used for the entry signal. Each DCA level needs one entry in `capital.drop` and `capital.risk`. The `capital.profit` list includes one additional entry for the initial position. For per-level cooldowns, supply one value in minutes per DCA level in `order.open.cooldown`, or use an empty list to disable them.
 
+Keys such as `trailing`, `compound` and `slippage` are reserved for future versions and currently have no effect.
+
 The repository includes `config.example.json` as a safe public template. Real API keys, Telegram tokens, logs, state files, and local configuration files should not be committed to the repository.
 
 ## Security Notes
